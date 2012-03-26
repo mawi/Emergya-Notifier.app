@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>KeystoneRegistration</string>
+	<key>CFBundleGetInfoString</key>
+	<string>Keystone 1.0.8.1973, © 2005-2009 Google Inc.</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.google.Keystone.Registration</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>FMWK</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0.8</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1.0.8.1973</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Keystone 1.0.8.1973, © 2005-2009 Google Inc.</string>
+</dict>
+</plist>

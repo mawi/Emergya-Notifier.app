@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+<dictionary title="Google Notifier Terminology">
+	<!--
+		STANDARD SUITE
+	-->
+	<suite name="Standard Suite" code="core"
+		description="Common classes and commands for all applications.">
+
+		<cocoa name="NSCoreSuite"/>
+
+		<command name="open" code="aevtodoc"
+			description="Open a document.">
+			<direct-parameter description="The file(s) to be opened.">
+				<type type="file"/>
+				<type type="file" list="yes"/>
+			</direct-parameter>
+			<!--
+				According to TN2106, 'open' should return the resulting document
+				object.  However, the Cocoa implementation does not do this yet.
+			<result type="specifier"/>
+			-->
+		</command>
+
+		<enumeration name="save options" code="savo">
+			<enumerator name="yes" code="yes " description="Save the file."/>
+			<enumerator name="no" code="no  " description="Do not save the file."/>
+			<enumerator name="ask" code="ask "
+				description="Ask the user whether or not to save the file."/>
+		</enumeration>
+
+		<command name="close" code="coreclos" description="Close a document.">
+			<cocoa class="NSCloseCommand"/>
+			<direct-parameter type="specifier"
+				description="the document(s) or window(s) to close."/>
+			<parameter name="saving" code="savo" type="save options" optional="yes"
+				description="Whether or not changes should be saved before closing.">
+				<cocoa key="SaveOptions"/>
+			</parameter>
+			<parameter name="saving in" code="kfil" type="file" optional="yes"
+				description="The file in which to save the document.">
+				<cocoa key="File"/>
+			</parameter>
+		</command>
+
+		<command name="save" code="coresave" description="Save a document.">
+			<direct-parameter type="specifier"
+				description="The document(s) or window(s) to save."/>
+			<parameter name="in" code="kfil" type="file" optional="yes"
+				description="The file in which to save the document.">
+				<cocoa key="File"/>
+			</parameter>
+			<parameter name="as" code="fltp" type="text" optional="yes"
+				description="The type of file to save.">
+				<cocoa key="FileType"/>
+			</parameter>
+		</command>
+
+		<enumeration name="printing error handling" code="enum">
+			<enumerator name="standard" code="lwst"
+				description="Standard PostScript error handling"/>
+			<enumerator name="detailed" code="lwdt"
+				description="print a detailed report of PostScript errors"/>
+		</enumeration>
+
+		<record-type name="print settings" code="pset">
+			<property name="copies" code="lwcp" type="integer"
+				description="the number of copies of a document to be printed">
+				<cocoa key="NSCopies"/>
+			</property>
+			<property name="collating" code="lwcl" type="boolean"
+				description="Should printed copies be collated?">
+				<cocoa key="NSMustCollate"/>
+			</property>
+			<property name="starting page" code="lwfp" type="integer"
+				description="the first page of the document to be printed">
+				<cocoa key="NSFirstPage"/>
+			</property>
+			<property name="ending page" code="lwlp" type="integer"
+				description="the last page of the document to be printed">
+				<cocoa key="NSLastPage"/>
+			</property>
+			<property name="pages across" code="lwla" type="integer"
+				description="number of logical pages laid across a physical page">
+				<cocoa key="NSPagesAcross"/>
+			</property>
+			<property name="pages down" code="lwld" type="integer"
+				description="number of logical pages laid out down a physical page">
+				<cocoa key="NSPagesDown"/>
+			</property>
+			<property name="error handling" code="lweh" type="printing error handling"
+				description="how errors are handled">
+				<cocoa key="NSDetailedErrorReporting"/>
+			</property>
+			<property name="fax number" code="faxn" type="text"
+				description="for fax number">
+				<cocoa key="NSFaxNumber"/>
+			</property>
+			<property name="target printer" code="trpr" type="text"
+				description="for target printer">
+				<cocoa key="NSPrinterName"/>
+			</property>
+		</record-type>
+
+		<command name="print" code="aevtpdoc" description="Print a document.">
+			<direct-parameter
+				description="The file(s), document(s), or window(s) to be printed.">
+				<type type="file" list="yes"/>
+				<type type="specifier"/>
+			</direct-parameter>
+			<parameter name="with properties" code="prdt" type="print settings" optional="yes"
+				description="The print settings to use.">
+				<cocoa key="PrintSettings"/>
+			</parameter>
+			<parameter name="print dialog" code="pdlg" type="boolean" optional="yes"
+				description="Should the application show the print dialog?">
+				<cocoa key="ShowPrintDialog"/>
+			</parameter>
+		</command>
+
+		<command name="quit" code="aevtquit" description="Quit the application.">
+<!--  <cocoa class="NSQuitCommand"/>
+	    <parameter name="saving" code="savo" type="save options" optional="yes"
+				description="Whether or not changed documents should be saved before closing.">
+				<cocoa key="SaveOptions"/>
+			</parameter>
+-->
+		</command>
+
+		<command name="count" code="corecnte"
+			description="Return the number of elements of a particular class within an object.">
+			<cocoa class="NSCountCommand"/>
+			<direct-parameter type="specifier"
+				description="the object whose elements are to be counted"/>
+			<parameter name="each" code="kocl" type="type" optional="yes"
+				description="The class of objects to be counted.">
+				<cocoa key="ObjectClass"/>
+			</parameter>
+			<result type="integer" description="the number of elements"/>
+		</command>
+
+		<command name="delete" code="coredelo" description="Delete an object.">
+			<cocoa class="NSDeleteCommand"/>
+			<direct-parameter type="specifier" description="the object to delete"/>
+		</command>
+
+		<command name="duplicate" code="coreclon"
+			description="Copy object(s) and put the copies at a new location.">
+			<cocoa class="NSCloneCommand"/>
+			<direct-parameter type="specifier"
+				description="the object(s) to duplicate"/>
+			<parameter name="to" code="insh" type="location specifier" optional="yes"
+				description="The location for the new object(s).">
+				<cocoa key="ToLocation"/>
+			</parameter>
+			<parameter name="with properties" code="prdt" type="record" optional="yes"
+				description="Properties to be set in the new duplicated object(s).">
+				<cocoa key="WithProperties"/>
+			</parameter>
+			<result type="specifier" description="the duplicated object(s)"/>
+		</command>
+
+		<command name="exists" code="coredoex" description="Verify if an object exists.">
+			<cocoa class="NSExistsCommand"/>
+			<direct-parameter type="any" description="the object in question"/>
+			<result type="boolean" description="true if it exists, false if not"/>
+		</command>
+
+		<command name="make" code="corecrel" description="Make a new object.">
+			<cocoa class="NSCreateCommand"/>
+			<parameter name="new" code="kocl" type="type"
+				description="The class of the new object.">
+				<cocoa key="ObjectClass"/>
+			</parameter>
+			<parameter name="at" code="insh" type="location specifier" optional="yes"
+				description="The location at which to insert the object.">
+				<cocoa key="Location"/>
+			</parameter>
+			<parameter name="with data" code="data" type="any" optional="yes"
+				description="The initial contents of the object.">
+				<cocoa key="ObjectData"/>
+			</parameter>
+			<parameter name="with properties" code="prdt" type="record" optional="yes"
+				description="The initial values for properties of the object.">
+				<cocoa key="KeyDictionary"/>
+			</parameter>
+			<result type="specifier" description="to the new object"/>
+		</command>
+
+		<command name="move" code="coremove" description="Move object(s) to a new location.">
+			<cocoa class="NSMoveCommand"/>
+			<direct-parameter type="specifier" description="the object(s) to move"/>
+			<parameter name="to" code="insh" type="location specifier"
+				description="The new location for the object(s).">
+				<cocoa key="ToLocation"/>
+			</parameter>
+			<result type="specifier" description="the moved object(s)"/>
+		</command>
+
+		<class name="application" code="capp"
+			description="The application's top-level scripting object.">
+			<cocoa class="NSApplication"/>
+			<property name="name" code="pnam" type="text" access="r"
+				description="The name of the application."/>
+			<property name="frontmost" code="pisf" type="boolean" access="r"
+				description="Is this the frontmost (active) application?">
+				<cocoa key="isActive"/>
+			</property>
+			<property name="version" code="vers" type="text" access="r"
+				description="The version of the application."/>
+<!--	<responds-to name="open"><cocoa method="handleOpenScriptCommand:"/></responds-to> -->
+<!--	<responds-to name="print"><cocoa method="handlePrintScriptCommand:"/></responds-to> -->
+			<responds-to name="quit"><cocoa method="handleQuitScriptCommand:"/></responds-to>
+		</class>
+
+	</suite>
+
+<suite name="Google Notifier Suite" code="GoNs" description="Google Notifier specific commands." >
+<command name="check" code="GoNschck">
+  <direct-parameter type="specifier" description="the service that should check for new entries."/>
+</command>
+<command name="check mail" code="GoNscmal" description="Check for new mail.">
+</command>
+<command name="check events" code="GoNscevt" description="Check for new Google Calendar events.">
+</command>
+<command name="quick add event" code="GoNsQuAE">
+  <cocoa class="QuickAddCommand" />
+  <direct-parameter type="text" description="make a new calendar entry with natural language text."/>
+</command>
+<class name="application" code="Capp">
+  <cocoa class="NSApplication" />
+  <property name="auto startup" code="aust" type="boolean" access="r" description="Indicates if the notifier should start at startup" />
+  <property name="new mail sound" code="Nmls" type="text" access="r" ><cocoa key="newMailSound" /></property>
+  <property name="upcoming event sound" code="Nevs"  type="text" access="r" ><cocoa key="upcomingEventSound" /></property>
+
+  <property name="auto check interval" code="acki" type="integer" access="r" description="How frequently, in minutes, Google Notifier should check for new events and messages" />
+  <property name="debug enabled" code="dbg?" type="boolean" access="r" description="Whether debug logging is turned on." />
+  <property name="should be default" code="deft" type="boolean" access="r" description="Whether clicking on &lt;mailto:xxx@yyy.com&gt; links should open in Gmail." />
+  <property name="total unread mail" code="Tum-" type="integer" access="r" description="Total count of unread mail."><cocoa key="countOfUnreadMail" /></property>
+  <property name="bouncing" code="Jump" type="boolean" access="rw" hidden="yes" description="menu icon bouncing to get user's attention"><cocoa key="bouncingForAttention" /></property>
+
+  <element type="entry" access="r" />
+  <element type="calendar event" access="r"><cocoa key="events" /></element>
+  <element type="message" access="r" ><cocoa key="messages" /></element>
+  <element type="service" access="r"><cocoa key="services" /></element>
+  <responds-to name="quit"><cocoa method="handleQuitScriptCommand:"/></responds-to>
+  <responds-to name="check mail"><cocoa method="handleCheckMailCommand:"/></responds-to>
+  <responds-to name="check events"><cocoa method="handleCheckEventsCommand:"/></responds-to>
+</class>
+<class name="entry" code="Entr" plural="entries" >
+  <cocoa class="GGAtomEntry" />
+  <property name="name" code="pnam" type ="text" access="r" />
+  <property name="index" code="pidx" type ="integer" access="r" />
+  <property name="id" code="ID  " type="text" access="r" description="The unique identifier of the entry.">
+    <cocoa key="identifier" />
+  </property>
+  <property name="author email" code="aeae" type ="text" access="r" />
+  <property name="author name" code="aean" type ="text" access="r" />
+  <property name="link" code="aeli" type ="text" access="r" >
+    <cocoa key="secureHref" />
+  </property>
+  <property name="summary" code="aesu" type ="text" access="r" />
+  <property name="title" code="aeti" type ="text" access="r" />
+
+  <property name="start" code="Star" type ="date" access="r" ><cocoa key="startTime" /></property>
+  <property name="stop" code="Stop" type ="date" access="r" ><cocoa key="stopTime" /></property>
+  <property name="notify" code="Noti" type ="date" access="r" ><cocoa key="notifyTime" /></property>
+  <property name="status" code="Stat" type ="text" access="r" ><cocoa key="eventStatus" /></property>
+  <property name="where" code="Wher" type ="text" access="r" ><cocoa key="where" /></property>
+
+</class>
+<class name="calendar event" code="CEvt" inherits="entry">
+<cocoa class="GGAtomEntry" />
+</class>
+<class name="message" code="Mesg" inherits="entry">
+<cocoa class="GGAtomEntry" />
+</class>
+<class name="service" code="Serv">
+<cocoa class="GGAutoFetcher" />
+<property name="name" code="pnam" type ="text" access="r" ><cocoa key="serviceUserName" /></property>
+<property name="index" code="pidx" type ="integer" access="r" ><cocoa key="serviceIndex" /></property>
+<property name="sound" code="sund" type ="text" access="r" ><cocoa key="soundName" /></property>
+<property name="enabled" code="Enab" type ="boolean" access="r" ><cocoa key="serviceIsEnabled" /></property>
+<element type="entry" access="r"><cocoa key="entries" /></element>
+<responds-to name="check"><cocoa method="handleCheckCommand:"/></responds-to>
+</class>
+</suite>
+</dictionary>

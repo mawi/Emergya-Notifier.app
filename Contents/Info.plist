@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDisplayName</key>
+	<string>Google Notifier</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSTypeIsPackage</key>
+			<false/>
+		</dict>
+	</array>
+	<key>CFBundleExecutable</key>
+	<string>Google Notifier</string>
+	<key>CFBundleGetInfoString</key>
+	<string>Google Notifier 1.10.7.1294, © 2005-2010 Google Inc.</string>
+	<key>CFBundleHelpBookFolder</key>
+	<string>GoogleNotifierHelp</string>
+	<key>CFBundleHelpBookName</key>
+	<string>GoogleNotifierHelp</string>
+	<key>CFBundleIconFile</key>
+	<string>App</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.google.GmailNotifierEmergya</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>Google Notifier</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.10.7</string>
+	<key>CFBundleSignature</key>
+	<string>GOOG</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>CFBundleURLName</key>
+			<string>Email Address URL</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>mailto</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>1.10.7.1294</string>
+	<key>GoogleBreakpadMinidumpLocation</key>
+	<string>~/Library/Breakpad/GoogleNotifier</string>
+	<key>GoogleBreakpadProduct</key>
+	<string>Google_Notifier_Mac</string>
+	<key>GoogleBreakpadProductDisplay</key>
+	<string>Google Notifier</string>
+	<key>GoogleBreakpadSkipConfirm</key>
+	<string>NO</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>10.4.0</string>
+	<key>LSUIElement</key>
+	<string>1</string>
+	<key>NSAppleScriptEnabled</key>
+	<string>YES</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>© 2005-2010 Google Inc.</string>
+	<key>NSMainNibFile</key>
+	<string>MainMenu</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+	<key>NSSupportsSuddenTermination</key>
+	<true/>
+	<key>OSAScriptingDefinition</key>
+	<string>GoogleNotifier.sdef</string>
+</dict>
+</plist>

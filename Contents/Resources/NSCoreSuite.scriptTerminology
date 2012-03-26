@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Classes</key>
+	<dict>
+		<key>NSApplication</key>
+		<dict>
+			<key>Attributes</key>
+			<dict>
+				<key>isActive</key>
+				<dict>
+					<key>Description</key>
+					<string>Is this the frontmost (active) application?</string>
+					<key>Name</key>
+					<string>frontmost</string>
+				</dict>
+				<key>name</key>
+				<dict>
+					<key>Description</key>
+					<string>The name of the application.</string>
+					<key>Name</key>
+					<string>name</string>
+				</dict>
+				<key>version</key>
+				<dict>
+					<key>Description</key>
+					<string>The version of the application.</string>
+					<key>Name</key>
+					<string>version</string>
+				</dict>
+			</dict>
+			<key>Description</key>
+			<string>The application's top-level scripting object.</string>
+			<key>Name</key>
+			<string>application</string>
+			<key>PluralName</key>
+			<string>applications</string>
+		</dict>
+	</dict>
+	<key>Commands</key>
+	<dict>
+		<key>Close</key>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>File</key>
+				<dict>
+					<key>Description</key>
+					<string>The file in which to save the document.</string>
+					<key>Name</key>
+					<string>saving in</string>
+				</dict>
+				<key>SaveOptions</key>
+				<dict>
+					<key>Description</key>
+					<string>Whether or not changes should be saved before closing.</string>
+					<key>Name</key>
+					<string>saving</string>
+				</dict>
+			</dict>
+			<key>Description</key>
+			<string>Close a document.</string>
+			<key>Name</key>
+			<string>close</string>
+		</dict>
+		<key>Count</key>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>ObjectClass</key>
+				<dict>
+					<key>Description</key>
+					<string>The class of objects to be counted.</string>
+					<key>Name</key>
+					<string>each</string>
+				</dict>
+			</dict>
+			<key>Description</key>
+			<string>Return the number of elements of a particular class within an object.</string>
+			<key>Name</key>
+			<string>count</string>
+		</dict>
+		<key>Delete</key>
+		<dict>
+			<key>Description</key>
+			<string>Delete an object.</string>
+			<key>Name</key>
+			<string>delete</string>
+		</dict>
+		<key>Duplicate</key>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>ToLocation</key>
+				<dict>
+					<key>Description</key>
+					<string>The location for the new object(s).</string>
+					<key>Name</key>
+					<string>to</string>
+				</dict>
+				<key>WithProperties</key>
+				<dict>
+					<key>Description</key>
+					<string>Properties to be set in the new duplicated object(s).</string>
+					<key>Name</key>
+					<string>with properties</string>
+				</dict>
+			</dict>
+			<key>Description</key>
+			<string>Copy object(s) and put the copies at a new location.</string>
+			<key>Name</key>
+			<string>duplicate</string>
+		</dict>
+		<key>Exists</key>
+		<dict>
+			<key>Description</key>
+			<string>Verify if an object exists.</string>
+			<key>Name</key>
+			<string>exists</string>
+			<key>UnnamedArgument</key>
+			<dict>
+				<key>Description</key>
+				<string>the object in question</string>
+			</dict>
+		</dict>
+		<key>Make</key>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>KeyDictionary</key>
+				<dict>
+					<key>Description</key>
+					<string>The initial values for properties of the object.</string>
+					<key>Name</key>
+					<string>with properties</string>
+				</dict>
+				<key>Location</key>
+				<dict>
+					<key>Description</key>
+					<string>The location at which to insert the object.</string>
+					<key>Name</key>
+					<string>at</string>
+				</dict>
+				<key>ObjectClass</key>
+				<dict>
+					<key>Description</key>
+					<string>The class of the new object.</string>
+					<key>Name</key>
+					<string>new</string>
+				</dict>
+				<key>ObjectData</key>
+				<dict>
+					<key>Description</key>
+					<string>The initial contents of the object.</string>
+					<key>Name</key>
+					<string>with data</string>
+				</dict>
+			</dict>
+			<key>Description</key>
+			<string>Make a new object.</string>
+			<key>Name</key>
+			<string>make</string>
+		</dict>
+		<key>Move</key>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>ToLocation</key>
+				<dict>
+					<key>Description</key>
+					<string>The new location for the object(s).</string>
+					<key>Name</key>
+					<string>to</string>
+				</dict>
+			</dict>
+			<key>Description</key>
+			<string>Move object(s) to a new location.</string>
+			<key>Name</key>
+			<string>move</string>
+		</dict>
+		<key>Open</key>
+		<dict>
+			<key>Description</key>
+			<string>Open a document.</string>
+			<key>Name</key>
+			<string>open</string>
+			<key>UnnamedArgument</key>
+			<dict>
+				<key>Description</key>
+				<string>The file(s) to be opened.</string>
+			</dict>
+		</dict>
+		<key>Print</key>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>PrintSettings</key>
+				<dict>
+					<key>Description</key>
+					<string>The print settings to use.</string>
+					<key>Name</key>
+					<string>with properties</string>
+				</dict>
+				<key>ShowPrintDialog</key>
+				<dict>
+					<key>Description</key>
+					<string>Should the application show the print dialog?</string>
+					<key>Name</key>
+					<string>print dialog</string>
+				</dict>
+			</dict>
+			<key>Description</key>
+			<string>Print a document.</string>
+			<key>Name</key>
+			<string>print</string>
+			<key>UnnamedArgument</key>
+			<dict>
+				<key>Description</key>
+				<string>The file(s), document(s), or window(s) to be printed.</string>
+			</dict>
+		</dict>
+		<key>Quit</key>
+		<dict>
+			<key>Description</key>
+			<string>Quit the application.</string>
+			<key>Name</key>
+			<string>quit</string>
+		</dict>
+		<key>Save</key>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>File</key>
+				<dict>
+					<key>Description</key>
+					<string>The file in which to save the document.</string>
+					<key>Name</key>
+					<string>in</string>
+				</dict>
+				<key>FileType</key>
+				<dict>
+					<key>Description</key>
+					<string>The type of file to save.</string>
+					<key>Name</key>
+					<string>as</string>
+				</dict>
+			</dict>
+			<key>Description</key>
+			<string>Save a document.</string>
+			<key>Name</key>
+			<string>save</string>
+		</dict>
+	</dict>
+	<key>Description</key>
+	<string>Common classes and commands for all applications.</string>
+	<key>Enumerations</key>
+	<dict>
+		<key>PrintingErrorHandling</key>
+		<dict>
+			<key>Detailed</key>
+			<dict>
+				<key>Description</key>
+				<string>print a detailed report of PostScript errors</string>
+				<key>Name</key>
+				<string>detailed</string>
+			</dict>
+			<key>Standard</key>
+			<dict>
+				<key>Description</key>
+				<string>Standard PostScript error handling</string>
+				<key>Name</key>
+				<string>standard</string>
+			</dict>
+		</dict>
+		<key>SaveOptions</key>
+		<dict>
+			<key>Ask</key>
+			<dict>
+				<key>Description</key>
+				<string>Ask the user whether or not to save the file.</string>
+				<key>Name</key>
+				<string>ask</string>
+			</dict>
+			<key>No</key>
+			<dict>
+				<key>Description</key>
+				<string>Do not save the file.</string>
+				<key>Name</key>
+				<string>no</string>
+			</dict>
+			<key>Yes</key>
+			<dict>
+				<key>Description</key>
+				<string>Save the file.</string>
+				<key>Name</key>
+				<string>yes</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>Name</key>
+	<string>Standard Suite</string>
+</dict>
+</plist>

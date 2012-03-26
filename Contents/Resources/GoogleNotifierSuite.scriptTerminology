@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Classes</key>
+	<dict>
+		<key>GGAtomEntry</key>
+		<dict>
+			<key>Attributes</key>
+			<dict>
+				<key>authorEmail</key>
+				<dict>
+					<key>Name</key>
+					<string>author email</string>
+				</dict>
+				<key>authorName</key>
+				<dict>
+					<key>Name</key>
+					<string>author name</string>
+				</dict>
+				<key>eventStatus</key>
+				<dict>
+					<key>Name</key>
+					<string>status</string>
+				</dict>
+				<key>identifier</key>
+				<dict>
+					<key>Description</key>
+					<string>The unique identifier of the entry.</string>
+					<key>Name</key>
+					<string>id</string>
+				</dict>
+				<key>index</key>
+				<dict>
+					<key>Name</key>
+					<string>index</string>
+				</dict>
+				<key>name</key>
+				<dict>
+					<key>Name</key>
+					<string>name</string>
+				</dict>
+				<key>notifyTime</key>
+				<dict>
+					<key>Name</key>
+					<string>notify</string>
+				</dict>
+				<key>secureHref</key>
+				<dict>
+					<key>Name</key>
+					<string>link</string>
+				</dict>
+				<key>startTime</key>
+				<dict>
+					<key>Name</key>
+					<string>start</string>
+				</dict>
+				<key>stopTime</key>
+				<dict>
+					<key>Name</key>
+					<string>stop</string>
+				</dict>
+				<key>summary</key>
+				<dict>
+					<key>Name</key>
+					<string>summary</string>
+				</dict>
+				<key>title</key>
+				<dict>
+					<key>Name</key>
+					<string>title</string>
+				</dict>
+				<key>where</key>
+				<dict>
+					<key>Name</key>
+					<string>where</string>
+				</dict>
+			</dict>
+			<key>Name</key>
+			<string>entry</string>
+			<key>PluralName</key>
+			<string>entries</string>
+		</dict>
+		<key>GGAutoFetcher</key>
+		<dict>
+			<key>Attributes</key>
+			<dict>
+				<key>serviceIndex</key>
+				<dict>
+					<key>Name</key>
+					<string>index</string>
+				</dict>
+				<key>serviceIsEnabled</key>
+				<dict>
+					<key>Name</key>
+					<string>enabled</string>
+				</dict>
+				<key>serviceUserName</key>
+				<dict>
+					<key>Name</key>
+					<string>name</string>
+				</dict>
+				<key>soundName</key>
+				<dict>
+					<key>Name</key>
+					<string>sound</string>
+				</dict>
+			</dict>
+			<key>Name</key>
+			<string>service</string>
+			<key>PluralName</key>
+			<string>services</string>
+		</dict>
+		<key>NSApplication</key>
+		<dict>
+			<key>Attributes</key>
+			<dict>
+				<key>autoCheckInterval</key>
+				<dict>
+					<key>Description</key>
+					<string>How frequently, in minutes, Google Notifier should check for new events and messages</string>
+					<key>Name</key>
+					<string>auto check interval</string>
+				</dict>
+				<key>autoStartup</key>
+				<dict>
+					<key>Description</key>
+					<string>Indicates if the notifier should start at startup</string>
+					<key>Name</key>
+					<string>auto startup</string>
+				</dict>
+				<key>countOfUnreadMail</key>
+				<dict>
+					<key>Description</key>
+					<string>Total count of unread mail.</string>
+					<key>Name</key>
+					<string>total unread mail</string>
+				</dict>
+				<key>debugEnabled</key>
+				<dict>
+					<key>Description</key>
+					<string>Whether debug logging is turned on.</string>
+					<key>Name</key>
+					<string>debug enabled</string>
+				</dict>
+				<key>newMailSound</key>
+				<dict>
+					<key>Name</key>
+					<string>new mail sound</string>
+				</dict>
+				<key>shouldBeDefault</key>
+				<dict>
+					<key>Description</key>
+					<string>Whether clicking on &lt;mailto:xxx@yyy.com&gt; links should open in Gmail.</string>
+					<key>Name</key>
+					<string>should be default</string>
+				</dict>
+				<key>upcomingEventSound</key>
+				<dict>
+					<key>Name</key>
+					<string>upcoming event sound</string>
+				</dict>
+			</dict>
+			<key>Name</key>
+			<string>application</string>
+			<key>PluralName</key>
+			<string>applications</string>
+		</dict>
+	</dict>
+	<key>Commands</key>
+	<dict>
+		<key>Check</key>
+		<dict>
+			<key>Name</key>
+			<string>check</string>
+		</dict>
+		<key>CheckEvents</key>
+		<dict>
+			<key>Description</key>
+			<string>Check for new Google Calendar events.</string>
+			<key>Name</key>
+			<string>check events</string>
+		</dict>
+		<key>CheckMail</key>
+		<dict>
+			<key>Description</key>
+			<string>Check for new mail.</string>
+			<key>Name</key>
+			<string>check mail</string>
+		</dict>
+		<key>QuickAddEvent</key>
+		<dict>
+			<key>Name</key>
+			<string>quick add event</string>
+			<key>UnnamedArgument</key>
+			<dict>
+				<key>Description</key>
+				<string>make a new calendar entry with natural language text.</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>Description</key>
+	<string>Google Notifier specific commands.</string>
+	<key>Name</key>
+	<string>Google Notifier Suite</string>
+	<key>Synonyms</key>
+	<dict>
+		<key>CEvt</key>
+		<dict>
+			<key>Name</key>
+			<string>calendar event</string>
+			<key>PluralName</key>
+			<string>calendar events</string>
+		</dict>
+		<key>Mesg</key>
+		<dict>
+			<key>Name</key>
+			<string>message</string>
+			<key>PluralName</key>
+			<string>messages</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
